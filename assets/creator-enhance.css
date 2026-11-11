@@ -1,0 +1,51 @@
+@media (max-width: 820px) {
+  html,
+  body,
+  .shell,
+  .panel,
+  .side,
+  .workspace {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  html,
+  body { overflow-x: hidden; }
+
+  .filebar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .filebar input,
+  .editor {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .actionbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .actionbar .status {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .filebar { grid-template-columns: minmax(0, 1fr) auto; }
+  .filebar #path { grid-column: 1 / -1; }
+
+  .actionbar { grid-template-columns: 1fr 1fr; }
+  .actionbar .status { grid-column: 1 / -1; }
+  .actionbar .button { width: 100%; padding-inline: 8px; }
+}
