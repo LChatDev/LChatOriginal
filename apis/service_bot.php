@@ -41,7 +41,7 @@ function service_bot_direct_chat(int $uid): int {
 
 function service_bot_send(int $uid, string $text): void {
     $chatId = service_bot_direct_chat($uid);
-    query('INSERT INTO messages (chat_id, user_id, body, nonce, created_at) VALUES (?, ?, ?, ?, ?)', [$chatId, service_bot_id(), $text, 'service_' . bin2hex(random_bytes(20)), stamp()]);
+    query('INSERT INTO messages (chat_id, user_id, body, nonce, created_at) VALUES (?, ?, ?, ?, ?)', [$chatId, service_bot_id(), message_store($text), 'service_' . bin2hex(random_bytes(20)), stamp()]);
 }
 
 function service_site_permission_request(int $uid, int $botId): array {
@@ -88,7 +88,7 @@ function service_bot_process(int $chatId, int $senderId, int $messageId, string 
     if (($chat['kind'] ?? '') !== 'direct') return;
     transaction(static function () use ($chatId, $senderId, $messageId, $body, $serviceId): void {
         if (one('SELECT message_id FROM service_bot_handled WHERE message_id = ?', [$messageId])) return;
-        query('INSERT INTO messages (chat_id, user_id, body, nonce, created_at) VALUES (?, ?, ?, ?, ?)', [$chatId, $serviceId, service_bot_answer($senderId, $body), 'service_' . bin2hex(random_bytes(20)), stamp()]);
+        query('INSERT INTO messages (chat_id, user_id, body, nonce, created_at) VALUES (?, ?, ?, ?, ?)', [$chatId, $serviceId, message_store(service_bot_answer($senderId, $body)), 'service_' . bin2hex(random_bytes(20)), stamp()]);
         query('INSERT INTO service_bot_handled (message_id) VALUES (?)', [$messageId]);
     });
 }
