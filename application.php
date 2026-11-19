@@ -9,7 +9,7 @@ $versions = [
         'date' => '30 октября 2026',
         'size' => '22,7 МБ',
         'sha256' => 'aafbe3a5ab22bc02b7fbd0be15a37c679c2b9e549aff2ad58cae3b354e5bb6fb',
-        'file' => 'apps/LChat-2.2.0-universal.apk',
+        'file' => 'https://github.com/LChatDev/LChat/releases/download/android-v2.2.0/LChat-2.2.0-universal.apk',
         'latest' => true,
         'changes' => [
             'Нативный интерфейс чатов, групп и каналов в стиле LChat.',
@@ -23,7 +23,7 @@ $versions = [
         'date' => '30 октября 2026',
         'size' => '22,7 МБ',
         'sha256' => '40a40acb686705a8be0de96b26fa0872cc68a2a94f28ef4ac491d4e0ac4af5c4',
-        'file' => 'apps/LChat-2.1.0-universal.apk',
+        'file' => 'https://github.com/LChatDev/LChat/releases/download/android-v2.1.0/LChat-2.1.0-universal.apk',
         'changes' => ['Текстовые сообщения до 10 МиБ.', 'Постраничное открытие очень длинных сообщений.', 'Диагностика аудиопроцесса звонков.'],
     ],
     [
@@ -31,7 +31,7 @@ $versions = [
         'date' => '30 октября 2026',
         'size' => '22,7 МБ',
         'sha256' => 'a137828c7a920392d0e29de39adfdfa0fe0137effdccb375ffa1901ef68e0259',
-        'file' => 'apps/LChat-2.0.9-universal.apk',
+        'file' => 'https://github.com/LChatDev/LChat/releases/download/android-v2.0.9/LChat-2.0.9-universal.apk',
         'changes' => ['Изменена обработка аудиоэффектов на устройствах Samsung.', 'Расширена диагностика нативных сбоев WebRTC.'],
     ],
     [
@@ -39,7 +39,7 @@ $versions = [
         'date' => '30 октября 2026',
         'size' => '22,7 МБ',
         'sha256' => 'e6e7dd123cd069a95a60dc58dc68b7aa88034e7be730474f18f50ccf4b28040a',
-        'file' => 'apps/LChat-2.0.8-universal.apk',
+        'file' => 'https://github.com/LChatDev/LChat/releases/download/android-v2.0.8/LChat-2.0.8-universal.apk',
         'changes' => ['Добавлена расшифровка аварийного завершения аудиопроцесса.', 'Улучшен диагностический отчёт звонка.'],
     ],
     [
@@ -47,7 +47,7 @@ $versions = [
         'date' => '30 октября 2026',
         'size' => '22,7 МБ',
         'sha256' => 'bfdf0d8cef94fe4082a3d5e31421d2ef1f6b789a56a8d70e6a0c556cba6cb529',
-        'file' => 'apps/LChat-2.0.7-universal.apk',
+        'file' => 'https://github.com/LChatDev/LChat/releases/download/android-v2.0.7/LChat-2.0.7-universal.apk',
         'changes' => ['Стабилизация отдельного аудиопроцесса.', 'Исправление очистки состояния после завершения звонка.'],
     ],
     [
@@ -55,7 +55,7 @@ $versions = [
         'date' => '30 октября 2026',
         'size' => '22,7 МБ',
         'sha256' => '5344c9c5c1c2c65c580e4b6bd3f3cefdd3bee4a0c372877eb036d15122657615',
-        'file' => 'apps/LChat-2.0.6-universal.apk',
+        'file' => 'https://github.com/LChatDev/LChat/releases/download/android-v2.0.6/LChat-2.0.6-universal.apk',
         'changes' => ['Улучшен запуск фоновой аудиослужбы.', 'Добавлено восстановление состояния звонка после перезапуска приложения.'],
     ],
     [
@@ -63,7 +63,7 @@ $versions = [
         'date' => '30 октября 2026',
         'size' => '22,7 МБ',
         'sha256' => 'a479780d64839680bd42f7a891ef293ad0fc6e673b849fa10aea677bfa6d9b85',
-        'file' => 'apps/LChat-2.0.5-universal.apk',
+        'file' => 'https://github.com/LChatDev/LChat/releases/download/android-v2.0.5/LChat-2.0.5-universal.apk',
         'changes' => ['Ранняя версия нативного Android-клиента.', 'Чаты, каналы, голосовые сообщения и интернет-звонки.'],
     ],
 ];

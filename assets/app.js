@@ -100,6 +100,7 @@ async function boot(verifiedSession=null){
   const params=new URLSearchParams(location.search);
   if(params.has('call')){await openCall(params.get('call'));return;}
   if(!me){view('auth');return;}
+    if(typeof bootData.site_name==='string'&&bootData.site_name.trim()){const name=bootData.site_name.trim();document.querySelectorAll('[data-site-name]').forEach(el=>el.textContent=name);document.querySelectorAll('[data-site-initial]').forEach(el=>el.textContent=Array.from(name)[0].toUpperCase());document.title=name+' — ближе друг к другу';}
   view('messenger');$('profile-button').textContent=me.name.slice(0,1).toUpperCase();$('profile-button').title=me.name;const profileImage=node('img');profileImage.src='avatar.php?id='+me.id+'&v='+avatarEpoch;profileImage.alt='';$('profile-button').append(profileImage);
   try{await refreshChats();}catch(e){connection(false);}pollChats();
   if(params.has('invite')) await inviteDialog(params.get('invite'));if(window.LCHAT_CHANNEL||params.has('channel'))await channelInvite(window.LCHAT_CHANNEL||params.get('channel'));

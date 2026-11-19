@@ -3,7 +3,7 @@ declare(strict_types=1);
 if (!defined('LCHAT_INTERNAL')) { http_response_code(404); exit; }
 $art=static function(array $gift): string {
     $index=(int)($gift[3]??-1); $variant=(string)($gift[5]??'original');
-    if (!empty($gift[7]) && preg_match('/^gift_[0-9]{19}$/D', (string)$gift[7])) { $id=htmlspecialchars($gift[7],ENT_QUOTES,'UTF-8'); return '<span class="gift-art gift-tgs" data-tgs="'.$id.'"><img class="tgs-preview" src="https://data.lbs.su/lchat-gifts/webp/'.$id.'.webp" alt="'.htmlspecialchars($gift[1],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8').'" loading="lazy"></span>'; }
+    if (!empty($gift[7]) && preg_match('/^gift_[0-9]{19}$/D', (string)$gift[7])) { $id=htmlspecialchars($gift[7],ENT_QUOTES,'UTF-8'); return '<span class="gift-art gift-tgs" data-tgs="'.$id.'"><img class="tgs-preview" src="/assets/lchat-gifts/webp/'.$id.'.webp" alt="'.htmlspecialchars($gift[1],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8').'" loading="lazy"></span>'; }
     if ($index<0) return '<span class="gift-art gift-emoji">'.htmlspecialchars($gift[0],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8').'</span>';
     $sheet=(string)($gift[6]??'');
     if (in_array($sheet,['one','two'],true) && $index<16) return '<span class="gift-art gift-sprite gift-extra-'.$sheet.'" style="--sprite-x:'.(($index%4)*100/3).'%;--sprite-y:'.(intdiv($index,4)*100/3).'%" role="img" aria-label="'.htmlspecialchars($gift[1],ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8').'"></span>';

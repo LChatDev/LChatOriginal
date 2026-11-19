@@ -5,7 +5,7 @@
   const input = document.getElementById('message-input');
   const messages = document.getElementById('message-items');
   if (!composer || !input || !messages) return;
-  const base = 'https://data.lbs.su/lchat-emoji/telegram-v1/';
+  const base = '/assets/lchat-emoji/telegram-v1/';
   const categories = {'All':'Все','Smileys':'Смайлы','People':'Люди','Animals and Nature':'Природа','Food and Drink':'Еда','Activity':'Занятия','Travel and Places':'Места','Objects':'Предметы','Symbols':'Символы','Flags':'Флаги'};
   let entries = [], byId = new Map(), category = 'All', loadPromise, pickerMode = 'emoji';
   const button = document.createElement('button');
